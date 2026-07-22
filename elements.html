@@ -11,8 +11,12 @@
 	<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/main.css">
+
+	<!-- Стили для Magnific Popup -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+
 	<style>
-		/* Дополнительные стили для адаптивной сетки галереи */
+		/* Стили для адаптивной сетки галереи */
 		.gallery-grid {
 			display: grid;
 			grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -27,6 +31,8 @@
 			background: rgba(255, 255, 255, 0.05);
 			box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 			transition: transform 0.3s ease, box-shadow 0.3s ease;
+			display: block;
+			text-decoration: none;
 		}
 
 		.gallery-card:hover {
@@ -36,14 +42,14 @@
 
 		.gallery-card-image {
 			width: 100%;
-			height: 260px; /* Фиксированная высота для выравнивания различных форматов */
+			height: 260px;
 			overflow: hidden;
 		}
 
 		.gallery-card-image img {
 			width: 100%;
 			height: 100%;
-			object-fit: cover; /* Сохраняет пропорции без растяжения */
+			object-fit: cover;
 			transition: transform 0.4s ease;
 			display: block;
 		}
@@ -60,6 +66,7 @@
 		.gallery-card-caption h3 {
 			margin: 0 0 5px 0;
 			font-size: 1.1rem;
+			color: #ffffff;
 		}
 
 		.gallery-card-caption p {
@@ -99,10 +106,10 @@
 	<div id="main" class="container">
 		<h2 id="gallery" class="align-center">Featured Works</h2>
 		
-		<div class="gallery-grid">
+		<div class="gallery-grid" id="portfolio-gallery">
 
 			<!-- Фото 1 -->
-			<div class="gallery-card">
+			<a href="images/001.png" class="gallery-card" title="Artwork Title 1 — Illustration / Digital">
 				<div class="gallery-card-image">
 					<img src="images/001.png" alt="Artwork 1">
 				</div>
@@ -110,10 +117,10 @@
 					<h3>Artwork Title 1</h3>
 					<p>Illustration / Digital</p>
 				</div>
-			</div>
+			</a>
 
 			<!-- Фото 2 -->
-			<div class="gallery-card">
+			<a href="images/002.png" class="gallery-card" title="Artwork Title 2 — 2D Concept">
 				<div class="gallery-card-image">
 					<img src="images/002.png" alt="Artwork 2">
 				</div>
@@ -121,10 +128,10 @@
 					<h3>Artwork Title 2</h3>
 					<p>2D Concept</p>
 				</div>
-			</div>
+			</a>
 
 			<!-- Фото 3 -->
-			<div class="gallery-card">
+			<a href="images/003.png" class="gallery-card" title="Artwork Title 3 — Vector Art">
 				<div class="gallery-card-image">
 					<img src="images/003.png" alt="Artwork 3">
 				</div>
@@ -132,10 +139,10 @@
 					<h3>Artwork Title 3</h3>
 					<p>Vector Art</p>
 				</div>
-			</div>
+			</a>
 
 			<!-- Фото 4 -->
-			<div class="gallery-card">
+			<a href="images/004.png" class="gallery-card" title="Artwork Title 4 — Character Design">
 				<div class="gallery-card-image">
 					<img src="images/004.png" alt="Artwork 4">
 				</div>
@@ -143,10 +150,10 @@
 					<h3>Artwork Title 4</h3>
 					<p>Character Design</p>
 				</div>
-			</div>
+			</a>
 
 			<!-- Фото 5 -->
-			<div class="gallery-card">
+			<a href="images/005.png" class="gallery-card" title="Artwork Title 5 — Background Art">
 				<div class="gallery-card-image">
 					<img src="images/005.png" alt="Artwork 5">
 				</div>
@@ -154,32 +161,32 @@
 					<h3>Artwork Title 5</h3>
 					<p>Background Art</p>
 				</div>
-			</div>
+			</a>
 
 			<!-- Фото 6 -->
-			<div class="gallery-card">
+			<a href="images/006.png" class="gallery-card" title="Artwork Title 6 — Environment Design">
 				<div class="gallery-card-image">
-					<img src="006.png" alt="Artwork 6">
+					<img src="images/006.png" alt="Artwork 6">
 				</div>
 				<div class="gallery-card-caption">
 					<h3>Artwork Title 6</h3>
 					<p>Environment Design</p>
 				</div>
-			</div>
+			</a>
 
 			<!-- Фото 7 -->
-			<div class="gallery-card">
+			<a href="images/007.png" class="gallery-card" title="Artwork Title 7 — Sticker Pack">
 				<div class="gallery-card-image">
-					<img src="007.png" alt="Artwork 7">
+					<img src="images/007.png" alt="Artwork 7">
 				</div>
 				<div class="gallery-card-caption">
 					<h3>Artwork Title 7</h3>
 					<p>Sticker Pack</p>
 				</div>
-			</div>
+			</a>
 
 			<!-- Фото 8 -->
-			<div class="gallery-card">
+			<a href="images/008.png" class="gallery-card" title="Artwork Title 8 — Game Assets">
 				<div class="gallery-card-image">
 					<img src="images/008.png" alt="Artwork 8">
 				</div>
@@ -187,29 +194,29 @@
 					<h3>Artwork Title 8</h3>
 					<p>Game Assets</p>
 				</div>
-			</div>
+			</a>
 
 			<!-- Фото 9 -->
-			<div class="gallery-card">
+			<a href="images/009.png" class="gallery-card" title="Artwork Title 9 — UI Concept">
 				<div class="gallery-card-image">
-					<img src="images/001.png" alt="Artwork 9">
+					<img src="images/009.png" alt="Artwork 9">
 				</div>
 				<div class="gallery-card-caption">
 					<h3>Artwork Title 9</h3>
 					<p>UI Concept</p>
 				</div>
-			</div>
+			</a>
 
 			<!-- Фото 10 -->
-			<div class="gallery-card">
+			<a href="images/010.png" class="gallery-card" title="Artwork Title 10 — Illustration">
 				<div class="gallery-card-image">
-					<img src="images/001.png" alt="Artwork 10">
+					<img src="images/010.png" alt="Artwork 10">
 				</div>
 				<div class="gallery-card-caption">
 					<h3>Artwork Title 10</h3>
 					<p>Illustration</p>
 				</div>
-			</div>
+			</a>
 
 		</div>
 	</div>
@@ -226,10 +233,7 @@
 		</div>
 	</footer>
 	<div class="copyright">
-		© Created for Valeriy K. | 2023–<span id="current-year"></span>
-<script>
-  document.getElementById("current-year").textContent = new Date().getFullYear();
-</script>
+		Made with <a href="https://templated.live/">Templated</a> Distributed by <a href="https://themewagon.com/">ThemeWagon</a>.
 	</div>
 
 	<!-- Scripts -->
@@ -238,5 +242,30 @@
 	<script src="assets/js/skel.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
+
+	<!-- JS для Magnific Popup -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+
+	<!-- Инициализация галереи -->
+	<script>
+		$(document).ready(function() {
+			$('#portfolio-gallery').magnificPopup({
+				delegate: 'a.gallery-card',
+				type: 'image',
+				gallery: {
+					enabled: true,
+					navigateByImgClick: true,
+					preload: [0,1]
+				},
+				image: {
+					tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+					titleSrc: function(item) {
+						return item.el.attr('title');
+					}
+				}
+			});
+		});
+	</script>
+
 </body>
 </html>
