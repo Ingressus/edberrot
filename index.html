@@ -16,7 +16,10 @@
     
     <link rel="stylesheet" href="assets/css/main.css">
 
-    <!-- СТИЛИ ДЛЯ ЦЕНТРАЛЬНОГО БЛОКА -->
+    <!-- CSS библиотеки Fancybox для увеличения картинок -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+
+    <!-- СТИЛИ ДЛЯ ЦЕНТРАЛЬНОГО БЛОКА И ГАЛЕРЕИ -->
     <style>
         /* Скрываем левый логотип в шапке */
         #header .logo {
@@ -99,6 +102,11 @@
             border: 3px solid rgba(255, 255, 255, 0.8) !important;
             margin: 0 auto !important;
             box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5) !important;
+        }
+
+        /* Эффект курсора-лупы при наведении на картинки галереи */
+        .gallery .image fit a {
+            cursor: pointer;
         }
     </style>
 </head>
@@ -184,7 +192,7 @@
             
         </section>
 
-    <!-- Gallery (бывший Three) -->
+    <!-- Gallery -->
         <section id="three" class="wrapper style2">
             <div class="inner">
                 <header class="align-center">
@@ -194,22 +202,30 @@
                 <div class="gallery">
                     <div>
                         <div class="image fit">
-                            <a href="#"><img src="images/pic01.jpg" alt="" width="600" height="300"></a>
+                            <a href="images/1001.png" data-fancybox="gallery">
+                                <img src="images/1001.png" alt="Work 1001" width="600" height="300">
+                            </a>
                         </div>
                     </div>
                     <div>
                         <div class="image fit">
-                            <a href="#"><img src="images/pic02.jpg" alt="" width="600" height="300"></a>
+                            <a href="images/1002.png" data-fancybox="gallery">
+                                <img src="images/1002.png" alt="Work 1002" width="600" height="300">
+                            </a>
                         </div>
                     </div>
                     <div>
                         <div class="image fit">
-                            <a href="#"><img src="images/pic03.jpg" alt="" width="600" height="300"></a>
+                            <a href="images/1003.png" data-fancybox="gallery">
+                                <img src="images/1003.png" alt="Work 1003" width="600" height="300">
+                            </a>
                         </div>
                     </div>
                     <div>
                         <div class="image fit">
-                            <a href="#"><img src="images/pic04.jpg" alt="" width="600" height="300"></a>
+                            <a href="images/1004.png" data-fancybox="gallery">
+                                <img src="images/1004.png" alt="Work 1004" width="600" height="300">
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -240,5 +256,14 @@
         <script src="assets/js/skel.min.js"></script>
         <script src="assets/js/util.js"></script>
         <script src="assets/js/main.js"></script>
+
+    <!-- Скрипт Fancybox (для открытия изображений во весь экран) -->
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <script>
+        Fancybox.bind('[data-fancybox="gallery"]', {
+            // Настройки слайдера/лайтбокса при клике
+            wheel: "slide",
+        });
+    </script>
 </body>
 </html>
