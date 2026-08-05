@@ -16,47 +16,78 @@
     
     <link rel="stylesheet" href="assets/css/main.css">
 
-    <!-- НАСТРОЕННЫЕ СТИЛИ ДЛЯ КАРУСЕЛИ -->
+    <!-- ЖЕСТКАЯ ПЕРЕЗАПИСЬ СТИЛЕЙ КАРУСЕЛИ -->
     <style>
-        /* Выравнивание содержимого по центру */
+        /* Принудительно разворачиваем и выравниваем контейнер слайдера */
+        .banner .inner {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            justify-content: center !important;
+            padding: 2rem 1rem !important;
+        }
+
         .banner .inner header {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            justify-content: center !important;
+            width: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
         }
 
-        /* Стиль для круглого портрета */
+        /* Стиль и принудительное отображение круглого портрета */
         .carousel-profile-img {
-            width: 90px;
-            height: 90px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid rgba(255, 255, 255, 0.6);
-            margin-bottom: 0.6rem;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            display: block !important;
+            width: 90px !important;
+            height: 90px !important;
+            border-radius: 50% !important;
+            object-fit: cover !important;
+            border: 3px solid rgba(255, 255, 255, 0.7) !important;
+            margin: 0 auto 0.8rem auto !important;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+            position: relative !important;
+            z-index: 10 !important;
         }
 
-        /* Текст специализации (жирный, с аккуратным отступом до линии) */
+        /* Текст специализации */
         .banner .inner header p {
             font-weight: 700 !important;
-            font-size: 0.95rem;
-            text-transform: none;
-            letter-spacing: 0.5px;
-            margin-bottom: 0 !important;
-            padding-bottom: 0 !important;
+            font-size: 0.95rem !important;
+            text-transform: none !important;
+            letter-spacing: 0.5px !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            position: relative !important;
+            line-height: 1.4 !important;
         }
 
-        /* Корректируем отступы самой линии (сверху и снизу одинаковые по 0.4rem) */
-        .banner .inner header p::after {
-            margin: 0.4rem auto !important;
+        /* Полный сброс старой полосы шаблона (чтобы она не наезжала) */
+        .banner .inner header p::after,
+        .banner .inner header p::before,
+        .banner .inner header::after,
+        .banner .inner header::before {
+            display: none !important;
+            content: none !important;
         }
 
-        /* Название фотографии (полностью убираем верхние отступы/падинги темы) */
+        /* Кастомная чистая полоса-разделитель */
+        .header-divider {
+            width: 120px !important;
+            height: 2px !important;
+            background-color: rgba(255, 255, 255, 0.6) !important;
+            margin: 1rem 0 !important; /* Управляет отступами СВЕРХУ и СНИЗУ от полосы */
+            border: none !important;
+            display: block !important;
+        }
+
+        /* Название фотографии */
         .banner .inner header h2 {
-            font-size: 2.5rem;
-            margin-top: 0 !important;
-            padding-top: 0 !important;
+            font-size: 2.5rem !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            line-height: 1.2 !important;
         }
     </style>
 </head>
@@ -77,6 +108,7 @@
                     <header>
                         <img src="images/profile.png" alt="Valeria K." class="carousel-profile-img">
                         <p>2D Artist / Illustrator | Located at Kharkiv Ukraine</p>
+                        <div class="header-divider"></div>
                         <h2>Волшебный сад с фонтаном</h2>
                     </header>
                 </div>
@@ -89,6 +121,7 @@
                     <header>
                         <img src="images/profile.png" alt="Valeria K." class="carousel-profile-img">
                         <p>2D Artist / Illustrator | Located at Kharkiv Ukraine</p>
+                        <div class="header-divider"></div>
                         <h2>Каменная тропа в саду</h2>
                     </header>
                 </div>
@@ -101,6 +134,7 @@
                     <header>
                         <img src="images/profile.png" alt="Valeria K." class="carousel-profile-img">
                         <p>2D Artist / Illustrator | Located at Kharkiv Ukraine</p>
+                        <div class="header-divider"></div>
                         <h2>Ночной храм с единорогом</h2>
                     </header>
                 </div>
@@ -113,6 +147,7 @@
                     <header>
                         <img src="images/profile.png" alt="Valeria K." class="carousel-profile-img">
                         <p>2D Artist / Illustrator | Located at Kharkiv Ukraine</p>
+                        <div class="header-divider"></div>
                         <h2>Осенний пейзаж</h2>
                     </header>
                 </div>
@@ -125,6 +160,7 @@
                     <header>
                         <img src="images/profile.png" alt="Valeria K." class="carousel-profile-img">
                         <p>2D Artist / Illustrator | Located at Kharkiv Ukraine</p>
+                        <div class="header-divider"></div>
                         <h2>Галактический патруль</h2>
                     </header>
                 </div>
