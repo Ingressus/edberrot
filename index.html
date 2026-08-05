@@ -10,12 +10,15 @@
     <meta charset="utf-8">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Фавикон -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+    
     <link rel="stylesheet" href="assets/css/main.css">
 
-    <!-- ДОБАВЛЕННЫЕ СТИЛИ ДЛЯ ПОРТРЕТА В КАРУСЕЛИ -->
+    <!-- НАСТРОЕННЫЕ СТИЛИ ДЛЯ КАРУСЕЛИ -->
     <style>
-        /* Стили для контейнера текста в карусели */
+        /* Выравнивание содержимого по центру */
         .banner .inner header {
             display: flex;
             flex-direction: column;
@@ -25,27 +28,36 @@
 
         /* Стиль для круглого портрета */
         .carousel-profile-img {
-            width: 100px;  /* Размер портрета */
-            height: 100px;
-            border-radius: 50%; /* Делает изображение круглым */
-            object-fit: cover; /* Сохраняет пропорции лица */
-            border: 3px solid rgba(255, 255, 255, 0.5); /* Полупрозрачная рамка */
-            margin-bottom: 1rem; /* Отступ до текста специализации */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Легкая тень */
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid rgba(255, 255, 255, 0.6);
+            margin-bottom: 0.6rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
 
-        /* Стиль для текста специализации (мелкий шрифт) */
+        /* Текст специализации (жирный, с уменьшенным отступом снизу) */
         .banner .inner header p {
-            margin-bottom: 0.5rem; /* Отступ до названия фото */
-            text-transform: none; /* Отменяет верхний регистр, если он был */
-            letter-spacing: normal;
-            font-size: 0.9rem; /* Размер шрифта специализации */
+            font-weight: 700 !important;
+            font-size: 0.95rem;
+            text-transform: none;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.3rem !important;
+            padding-bottom: 0 !important;
         }
 
-        /* Стиль для названия фотографии (крупный шрифт) */
+        /* Отступы для линии-разделителя под тегом p (если она задана через ::after) */
+        .banner .inner header p::after {
+            margin-top: 0.4rem !important;
+            margin-bottom: 0.4rem !important;
+        }
+
+        /* Название фотографии (с уменьшенным отступом сверху) */
         .banner .inner header h2 {
-            font-size: 2.5rem; /* Уменьшим немного заголовок, чтобы вместить всё */
-            margin-top: 0;
+            font-size: 2.5rem;
+            margin-top: 0.3rem !important;
+            padding-top: 0 !important;
         }
     </style>
 </head>
@@ -64,11 +76,8 @@
                 <img src="images/slide01.png" alt="" width="1440" height="961">
                 <div class="inner">
                     <header>
-                        <!-- Портрет -->
-                        <img src="images/profile.png" alt="Valeria K. Portrait" class="carousel-profile-img">
-                        <!-- Специализация -->
+                        <img src="images/profile.png" alt="Valeria K." class="carousel-profile-img">
                         <p>2D Artist / Illustrator | Located at Kharkiv Ukraine</p>
-                        <!-- Название фотографии 1 -->
                         <h2>Волшебный сад с фонтаном</h2>
                     </header>
                 </div>
@@ -79,11 +88,8 @@
                 <img src="images/slide02.png" alt="" width="1440" height="961">
                 <div class="inner">
                     <header>
-                        <!-- Портрет (тот же файл) -->
-                        <img src="images/profile.png" alt="Valeria K. Portrait" class="carousel-profile-img">
-                        <!-- Специализация -->
+                        <img src="images/profile.png" alt="Valeria K." class="carousel-profile-img">
                         <p>2D Artist / Illustrator | Located at Kharkiv Ukraine</p>
-                        <!-- Название фотографии 2 -->
                         <h2>Каменная тропа в саду</h2>
                     </header>
                 </div>
@@ -94,11 +100,8 @@
                 <img src="images/slide03.jpg" alt="" width="1440" height="962">
                 <div class="inner">
                     <header>
-                        <!-- Портрет -->
-                        <img src="images/profile.png" alt="Valeria K. Portrait" class="carousel-profile-img">
-                        <!-- Специализация -->
+                        <img src="images/profile.png" alt="Valeria K." class="carousel-profile-img">
                         <p>2D Artist / Illustrator | Located at Kharkiv Ukraine</p>
-                        <!-- Название фотографии 3 -->
                         <h2>Ночной храм с единорогом</h2>
                     </header>
                 </div>
@@ -109,11 +112,8 @@
                 <img src="images/slide04.png" alt="" width="1440" height="961">
                 <div class="inner">
                     <header>
-                        <!-- Портрет -->
-                        <img src="images/profile.png" alt="Valeria K. Portrait" class="carousel-profile-img">
-                        <!-- Специализация -->
+                        <img src="images/profile.png" alt="Valeria K." class="carousel-profile-img">
                         <p>2D Artist / Illustrator | Located at Kharkiv Ukraine</p>
-                        <!-- Название фотографии 4 -->
                         <h2>Осенний пейзаж</h2>
                     </header>
                 </div>
@@ -124,11 +124,8 @@
                 <img src="images/slide05.jpg" alt="" width="1440" height="962">
                 <div class="inner">
                     <header>
-                        <!-- Портрет -->
-                        <img src="images/profile.png" alt="Valeria K. Portrait" class="carousel-profile-img">
-                        <!-- Специализация -->
+                        <img src="images/profile.png" alt="Valeria K." class="carousel-profile-img">
                         <p>2D Artist / Illustrator | Located at Kharkiv Ukraine</p>
-                        <!-- Название фотографии 5 -->
                         <h2>Галактический патруль</h2>
                     </header>
                 </div>
@@ -157,7 +154,6 @@
                             <div class="content">
                                 <header class="align-center"><p>mattis elementum sapien pretium tellus</p>
                                     <h2>Vestibulum sit amet</h2>
-                                }
                                 </header><p> Cras aliquet urna ut sapien tincidunt, quis malesuada elit facilisis. Vestibulum sit amet tortor velit. Nam elementum nibh a libero pharetra elementum. Maecenas feugiat ex purus, quis volutpat lacus placerat malesuada.</p>
                                 <footer class="align-center"><a href="#" class="button alt">Learn More</a>
                                 </footer></div>
