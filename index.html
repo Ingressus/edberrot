@@ -1,111 +1,213 @@
 <!DOCTYPE HTML>
 <!--
-	Hielo by TEMPLATED
-	templated.co @templatedco
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
---><html><head><title>Valeria K. Digital Artist</title><meta charset="utf-8"><meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="assets/css/main.css"></head><body>
+    Hielo by TEMPLATED
+    templated.co @templatedco
+    Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+<head>
+    <title>Valeria K. Digital Artist</title>
+    <meta charset="utf-8">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="assets/css/main.css">
 
-	<link rel="icon" type="image/x-icon" href="favicon.ico">
-		<!-- Header -->
-			<header id="header" class="alt"><div class="logo"><a href="index.html">Valeria K. <span>Digital Artist </span></a></div>
-				<a href="#menu">Menu</a>
-			</header><!-- Nav --><nav id="menu"><ul class="links"><li><a href="index.html">Home</a></li>
-					<li><a href="generic.html">Generic</a></li>
-					<li><a href="elements.html">Elements</a></li>
-				</ul></nav><!-- Banner --><section class="banner full"><article><img src="images/slide01.png" alt="" width="1440" height="961"><div class="inner">
-						<header><p>Magical garden with fountain</p>
-							<h2>Garden</h2>
-						</header></div>
-				</article><article><img src="images/slide02.png" alt="" width="1440" height="961"><div class="inner">
-						<header><p>Stone path through garden</p>
-							<h2>Path</h2>
-						</header></div>
-				</article><article><img src="images/slide03.jpg" alt="" width="1440" height="962"><div class="inner">
-						<header><p>Sed cursus aliuam veroeros lorem ipsum nullam</p>
-							<h2>Tempus</h2>
-						</header></div>
-				</article><article><img src="images/slide04.png" alt="" width="1440" height="961"><div class="inner">
-						<header><p>Adipiscing lorem ipsum feugiat sed phasellus consequat</p>
-							<h2>Etiam</h2>
-						</header></div>
-				</article><article><img src="images/slide05.jpg" alt="" width="1440" height="962"><div class="inner">
-						<header><p>Ipsum dolor sed magna veroeros lorem ipsum</p>
-							<h2>Adipiscing</h2>
-						</header></div>
-				</article></section><!-- One --><section id="one" class="wrapper style2"><div class="inner">
-					<div class="grid-style">
+    <!-- ДОБАВЛЕННЫЕ СТИЛИ ДЛЯ ПОРТРЕТА В КАРУСЕЛИ -->
+    <style>
+        /* Стили для контейнера текста в карусели */
+        .banner .inner header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
 
-						<div>
-							<div class="box">
-								<div class="image fit">
-									<img src="images/pic02.jpg" alt="" width="600" height="300"></div>
-								<div class="content">
-									<header class="align-center"><p>maecenas sapien feugiat ex purus</p>
-										<h2>Lorem ipsum dolor</h2>
-									</header><p> Cras aliquet urna ut sapien tincidunt, quis malesuada elit facilisis. Vestibulum sit amet tortor velit. Nam elementum nibh a libero pharetra elementum. Maecenas feugiat ex purus, quis volutpat lacus placerat malesuada.</p>
-									<footer class="align-center"><a href="#" class="button alt">Learn More</a>
-									</footer></div>
-							</div>
-						</div>
+        /* Стиль для круглого портрета */
+        .carousel-profile-img {
+            width: 100px;  /* Размер портрета */
+            height: 100px;
+            border-radius: 50%; /* Делает изображение круглым */
+            object-fit: cover; /* Сохраняет пропорции лица */
+            border: 3px solid rgba(255, 255, 255, 0.5); /* Полупрозрачная рамка */
+            margin-bottom: 1rem; /* Отступ до текста специализации */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Легкая тень */
+        }
 
-						<div>
-							<div class="box">
-								<div class="image fit">
-									<img src="images/pic03.jpg" alt="" width="600" height="300"></div>
-								<div class="content">
-									<header class="align-center"><p>mattis elementum sapien pretium tellus</p>
-										<h2>Vestibulum sit amet</h2>
-									</header><p> Cras aliquet urna ut sapien tincidunt, quis malesuada elit facilisis. Vestibulum sit amet tortor velit. Nam elementum nibh a libero pharetra elementum. Maecenas feugiat ex purus, quis volutpat lacus placerat malesuada.</p>
-									<footer class="align-center"><a href="#" class="button alt">Learn More</a>
-									</footer></div>
-							</div>
-						</div>
+        /* Стиль для текста специализации (мелкий шрифт) */
+        .banner .inner header p {
+            margin-bottom: 0.5rem; /* Отступ до названия фото */
+            text-transform: none; /* Отменяет верхний регистр, если он был */
+            letter-spacing: normal;
+            font-size: 0.9rem; /* Размер шрифта специализации */
+        }
 
-					</div>
-				</div>
-			</section><!-- Two --><section id="two" class="wrapper style3"><div class="inner">
-					<header class="align-center"><p>Nam vel ante sit amet libero scelerisque facilisis eleifend vitae urna</p>
-						<h2>Morbi maximus justo</h2>
-					</header></div>
-			</section><!-- Three --><section id="three" class="wrapper style2"><div class="inner">
-					<header class="align-center"><p class="special">Nam vel ante sit amet libero scelerisque facilisis eleifend vitae urna</p>
-						<h2>Morbi maximus justo</h2>
-					</header><div class="gallery">
-						<div>
-							<div class="image fit">
-								<a href="#"><img src="images/pic01.jpg" alt="" width="600" height="300"></a>
-							</div>
-						</div>
-						<div>
-							<div class="image fit">
-								<a href="#"><img src="images/pic02.jpg" alt="" width="600" height="300"></a>
-							</div>
-						</div>
-						<div>
-							<div class="image fit">
-								<a href="#"><img src="images/pic03.jpg" alt="" width="600" height="300"></a>
-							</div>
-						</div>
-						<div>
-							<div class="image fit">
-								<a href="#"><img src="images/pic04.jpg" alt="" width="600" height="300"></a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section><!-- Footer --><footer id="footer"><div class="container">
-					<ul class="icons"><li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-						<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
-					</ul></div>
-			</footer><div class="copyright">
-			© Created for Valeriy K. | 2023–<span id="current-year"></span>
+        /* Стиль для названия фотографии (крупный шрифт) */
+        .banner .inner header h2 {
+            font-size: 2.5rem; /* Уменьшим немного заголовок, чтобы вместить всё */
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+        <header id="header" class="alt"><div class="logo"><a href="index.html">Valeria K. <span>Digital Artist </span></a></div>
+            <a href="#menu">Menu</a>
+        </header><!-- Nav --><nav id="menu"><ul class="links"><li><a href="index.html">Home</a></li>
+                <li><a href="generic.html">Generic</a></li>
+                <li><a href="elements.html">Elements</a></li>
+            </ul></nav><!-- Banner --><section class="banner full">
+            
+            <!-- СЛАЙД 1 -->
+            <article>
+                <img src="images/slide01.png" alt="" width="1440" height="961">
+                <div class="inner">
+                    <header>
+                        <!-- Портрет -->
+                        <img src="images/profile.png" alt="Valeria K. Portrait" class="carousel-profile-img">
+                        <!-- Специализация -->
+                        <p>2D Artist / Illustrator | Located at Kharkiv Ukraine</p>
+                        <!-- Название фотографии 1 -->
+                        <h2>Волшебный сад с фонтаном</h2>
+                    </header>
+                </div>
+            </article>
+
+            <!-- СЛАЙД 2 -->
+            <article>
+                <img src="images/slide02.png" alt="" width="1440" height="961">
+                <div class="inner">
+                    <header>
+                        <!-- Портрет (тот же файл) -->
+                        <img src="images/profile.png" alt="Valeria K. Portrait" class="carousel-profile-img">
+                        <!-- Специализация -->
+                        <p>2D Artist / Illustrator | Located at Kharkiv Ukraine</p>
+                        <!-- Название фотографии 2 -->
+                        <h2>Каменная тропа в саду</h2>
+                    </header>
+                </div>
+            </article>
+
+            <!-- СЛАЙД 3 -->
+            <article>
+                <img src="images/slide03.jpg" alt="" width="1440" height="962">
+                <div class="inner">
+                    <header>
+                        <!-- Портрет -->
+                        <img src="images/profile.png" alt="Valeria K. Portrait" class="carousel-profile-img">
+                        <!-- Специализация -->
+                        <p>2D Artist / Illustrator | Located at Kharkiv Ukraine</p>
+                        <!-- Название фотографии 3 -->
+                        <h2>Ночной храм с единорогом</h2>
+                    </header>
+                </div>
+            </article>
+
+            <!-- СЛАЙД 4 -->
+            <article>
+                <img src="images/slide04.png" alt="" width="1440" height="961">
+                <div class="inner">
+                    <header>
+                        <!-- Портрет -->
+                        <img src="images/profile.png" alt="Valeria K. Portrait" class="carousel-profile-img">
+                        <!-- Специализация -->
+                        <p>2D Artist / Illustrator | Located at Kharkiv Ukraine</p>
+                        <!-- Название фотографии 4 -->
+                        <h2>Осенний пейзаж</h2>
+                    </header>
+                </div>
+            </article>
+
+            <!-- СЛАЙД 5 -->
+            <article>
+                <img src="images/slide05.jpg" alt="" width="1440" height="962">
+                <div class="inner">
+                    <header>
+                        <!-- Портрет -->
+                        <img src="images/profile.png" alt="Valeria K. Portrait" class="carousel-profile-img">
+                        <!-- Специализация -->
+                        <p>2D Artist / Illustrator | Located at Kharkiv Ukraine</p>
+                        <!-- Название фотографии 5 -->
+                        <h2>Галактический патруль</h2>
+                    </header>
+                </div>
+            </article>
+            
+        </section><!-- One --><section id="one" class="wrapper style2"><div class="inner">
+                <div class="grid-style">
+
+                    <div>
+                        <div class="box">
+                            <div class="image fit">
+                                <img src="images/pic02.jpg" alt="" width="600" height="300"></div>
+                            <div class="content">
+                                <header class="align-center"><p>maecenas sapien feugiat ex purus</p>
+                                    <h2>Lorem ipsum dolor</h2>
+                                </header><p> Cras aliquet urna ut sapien tincidunt, quis malesuada elit facilisis. Vestibulum sit amet tortor velit. Nam elementum nibh a libero pharetra elementum. Maecenas feugiat ex purus, quis volutpat lacus placerat malesuada.</p>
+                                <footer class="align-center"><a href="#" class="button alt">Learn More</a>
+                                </footer></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="box">
+                            <div class="image fit">
+                                <img src="images/pic03.jpg" alt="" width="600" height="300"></div>
+                            <div class="content">
+                                <header class="align-center"><p>mattis elementum sapien pretium tellus</p>
+                                    <h2>Vestibulum sit amet</h2>
+                                }
+                                </header><p> Cras aliquet urna ut sapien tincidunt, quis malesuada elit facilisis. Vestibulum sit amet tortor velit. Nam elementum nibh a libero pharetra elementum. Maecenas feugiat ex purus, quis volutpat lacus placerat malesuada.</p>
+                                <footer class="align-center"><a href="#" class="button alt">Learn More</a>
+                                </footer></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section><!-- Two --><section id="two" class="wrapper style3"><div class="inner">
+                <header class="align-center"><p>Nam vel ante sit amet libero scelerisque facilisis eleifend vitae urna</p>
+                    <h2>Morbi maximus justo</h2>
+                </header></div>
+        </section><!-- Three --><section id="three" class="wrapper style2"><div class="inner">
+                <header class="align-center"><p class="special">Nam vel ante sit amet libero scelerisque facilisis eleifend vitae urna</p>
+                    <h2>Morbi maximus justo</h2>
+                </header><div class="gallery">
+                    <div>
+                        <div class="image fit">
+                            <a href="#"><img src="images/pic01.jpg" alt="" width="600" height="300"></a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="image fit">
+                            <a href="#"><img src="images/pic02.jpg" alt="" width="600" height="300"></a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="image fit">
+                            <a href="#"><img src="images/pic03.jpg" alt="" width="600" height="300"></a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="image fit">
+                            <a href="#"><img src="images/pic04.jpg" alt="" width="600" height="300"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><!-- Footer --><footer id="footer"><div class="container">
+                <ul class="icons"><li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+                    <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+                    <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+                    <li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+                </ul></div>
+        </footer><div class="copyright">
+        © Created for Valeriy K. | 2023–<span id="current-year"></span>
 <script>
   document.getElementById("current-year").textContent = new Date().getFullYear();
 </script>
-		</div>
+    </div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script><script src="assets/js/jquery.scrollex.min.js"></script><script src="assets/js/skel.min.js"></script><script src="assets/js/util.js"></script><script src="assets/js/main.js"></script></body></html>
-
+    <!-- Scripts -->
+        <script src="assets/js/jquery.min.js"></script><script src="assets/js/jquery.scrollex.min.js"></script><script src="assets/js/skel.min.js"></script><script src="assets/js/util.js"></script><script src="assets/js/main.js"></script></body></html>
