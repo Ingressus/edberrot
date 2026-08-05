@@ -104,9 +104,27 @@
             box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5) !important;
         }
 
-        /* Эффект курсора-лупы при наведении на картинки галереи */
-        .gallery .image fit a {
+        /* ВЫРАВНИВАНИЕ КАРТОЧЕК ГАЛЕРЕИ ДО ОДИНАКОВОГО РАЗМЕРА */
+        .gallery .image.fit {
+            height: 320px !important; /* Фиксированная одинаковая высота */
+            overflow: hidden !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+        }
+
+        .gallery .image.fit a {
+            display: block !important;
+            width: 100% !important;
+            height: 100% !important;
             cursor: pointer;
+        }
+
+        .gallery .image.fit img {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important; /* Обрезает излишки, делая картинки строго одинаковыми */
+            object-position: center !important;
         }
     </style>
 </head>
@@ -197,34 +215,34 @@
             <div class="inner">
                 <header class="align-center">
                     <p class="special">Nam vel ante sit amet libero scelerisque facilisis eleifend vitae urna</p>
-                    <h2>Morbi maximus justo</h2>
+                    2D Artist / Illustrator
                 </header>
                 <div class="gallery">
                     <div>
                         <div class="image fit">
                             <a href="images/1001.png" data-fancybox="gallery">
-                                <img src="images/1001.png" alt="Work 1001" width="600" height="300">
+                                <img src="images/1001.png" alt="Work 1001">
                             </a>
                         </div>
                     </div>
                     <div>
                         <div class="image fit">
                             <a href="images/1002.png" data-fancybox="gallery">
-                                <img src="images/1002.png" alt="Work 1002" width="600" height="300">
+                                <img src="images/1002.png" alt="Work 1002">
                             </a>
                         </div>
                     </div>
                     <div>
                         <div class="image fit">
                             <a href="images/1003.png" data-fancybox="gallery">
-                                <img src="images/1003.png" alt="Work 1003" width="600" height="300">
+                                <img src="images/1003.png" alt="Work 1003">
                             </a>
                         </div>
                     </div>
                     <div>
                         <div class="image fit">
                             <a href="images/1004.png" data-fancybox="gallery">
-                                <img src="images/1004.png" alt="Work 1004" width="600" height="300">
+                                <img src="images/1004.png" alt="Work 1004">
                             </a>
                         </div>
                     </div>
@@ -257,11 +275,10 @@
         <script src="assets/js/util.js"></script>
         <script src="assets/js/main.js"></script>
 
-    <!-- Скрипт Fancybox (для открытия изображений во весь экран) -->
+    <!-- Скрипт Fancybox -->
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
     <script>
         Fancybox.bind('[data-fancybox="gallery"]', {
-            // Настройки слайдера/лайтбокса при клике
             wheel: "slide",
         });
     </script>
