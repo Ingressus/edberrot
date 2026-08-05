@@ -19,11 +19,33 @@
     <!-- CSS библиотеки Fancybox для увеличения картинок -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
 
-    <!-- СТИЛИ ДЛЯ ЦЕНТРАЛЬНОГО БЛОКА И ГАЛЕРЕИ -->
+    <!-- СТИЛИ ДЛЯ ЦЕНТРАЛЬНОГО БЛОКА, ВЕРХНИХ ИКОНОК И ГАЛЕРЕИ -->
     <style>
-        /* Скрываем левый логотип в шапке */
-        #header .logo {
-            display: none !important;
+        /* Отображение и стилизация блока иконок слева вверху */
+        #header .header-socials {
+            display: flex !important;
+            align-items: center !important;
+            gap: 1.2rem !important;
+            list-style: none !important;
+            margin: 0 !important;
+            padding: 0 0 0 1rem !important;
+        }
+
+        #header .header-socials li {
+            display: inline-block !important;
+            padding: 0 !important;
+        }
+
+        #header .header-socials a {
+            color: #ffffff !important;
+            font-size: 1.2rem !important;
+            text-decoration: none !important;
+            border: none !important;
+            transition: opacity 0.2s ease !important;
+        }
+
+        #header .header-socials a:hover {
+            opacity: 0.7 !important;
         }
 
         /* Выравнивание и центрирование главного блока на слайде */
@@ -106,7 +128,7 @@
 
         /* ВЫРАВНИВАНИЕ КАРТОЧЕК ГАЛЕРЕИ ДО ОДИНАКОВОГО РАЗМЕРА */
         .gallery .image.fit {
-            height: 320px !important; /* Фиксированная одинаковая высота */
+            height: 320px !important;
             overflow: hidden !important;
             display: flex !important;
             align-items: center !important;
@@ -123,7 +145,7 @@
         .gallery .image.fit img {
             width: 100% !important;
             height: 100% !important;
-            object-fit: cover !important; /* Обрезает излишки, делая картинки строго одинаковыми */
+            object-fit: cover !important;
             object-position: center !important;
         }
     </style>
@@ -132,7 +154,13 @@
 
     <!-- Header -->
         <header id="header" class="alt">
-            <div class="logo"><a href="index.html">Valeria K. <span>Digital Artist</span></a></div>
+            <!-- Иконки соцсетей слева вверху вместо старого текста -->
+            <ul class="header-socials">
+                <li><a href="https://t.me/edberrot" target="_blank" rel="noopener noreferrer" class="icon fa-paper-plane"><span class="label">Telegram</span></a></li>
+                <li><a href="https://www.facebook.com/people/%D0%92%D0%B0%D0%BB%D0%B5%D1%80%D0%B8%D1%8F-%D0%9A%D1%83%D0%B7%D1%8C%D0%BC%D0%B8%D0%BD%D1%81%D0%BA%D0%B0%D1%8F/pfbid0pXDk7a8bsMSmAfDk1e4Dm78aVTQTT69D58wuwoewN7Ts186sJwYt1mhaVX1PuV2Gl/" target="_blank" rel="noopener noreferrer" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+                <li><a href="https://www.instagram.com/edberrot/" target="_blank" rel="noopener noreferrer" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+                <li><a href="mailto:eedberrot@gmail.com" target="_blank" rel="noopener noreferrer" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+            </ul>
             <a href="#menu">Menu</a>
         </header>
 
@@ -214,8 +242,8 @@
         <section id="three" class="wrapper style2">
             <div class="inner">
                 <header class="align-center">
-                    <p class="special">Hi, dear visitor! I’m glad to see you on this page. My portfolio is living here. Best regards, Valeria.</p>
-                    2D Artist / Illustrator
+                    <p class="special">Nam vel ante sit amet libero scelerisque facilisis eleifend vitae urna</p>
+                    <h2>2D Artist / Illustrator</h2>
                 </header>
                 <div class="gallery">
                     <div>
