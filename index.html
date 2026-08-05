@@ -16,22 +16,14 @@
     
     <link rel="stylesheet" href="assets/css/main.css">
 
-    <!-- ЖЕСТКАЯ ПЕРЕЗАПИСЬ СТИЛЕЙ КАРУСЕЛИ -->
+    <!-- СТИЛИ ДЛЯ КАРУСЕЛИ (БЕЗ КОНФЛИКТА СО СКТИПТОМ СЛАЙДЕРА) -->
     <style>
-        /* Принудительно задаем относительное позиционирование баннеру */
-        .banner, 
-        .banner article {
-            position: relative !important;
-            overflow: hidden !important;
-        }
-
-        /* Полный сброс позиционирования блока .inner */
-        .banner article .inner,
-        .banner .inner {
+        /* Выравнивание содержимого внутри каждого слайда */
+        .banner article .inner {
             position: absolute !important;
             top: 50% !important;
             left: 50% !important;
-            bottom: auto !important; /* Сбрасываем привязку шаблона к нижнему краю! */
+            bottom: auto !important;
             right: auto !important;
             transform: translate(-50%, -50%) !important;
             -webkit-transform: translate(-50%, -50%) !important;
@@ -45,10 +37,10 @@
             max-width: 800px !important;
             margin: 0 !important;
             padding: 0 !important;
-            z-index: 20 !important;
+            z-index: 2 !important;
         }
 
-        .banner .inner header {
+        .banner article .inner header {
             display: flex !important;
             flex-direction: column !important;
             align-items: center !important;
@@ -71,7 +63,7 @@
         }
 
         /* Текст специализации */
-        .banner .inner header p {
+        .banner article .inner header p {
             font-weight: 700 !important;
             font-size: 0.9rem !important;
             text-transform: none !important;
@@ -83,16 +75,16 @@
             text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7) !important;
         }
 
-        /* Полный сброс линий Hielo */
-        .banner .inner header p::after,
-        .banner .inner header p::before,
-        .banner .inner header::after,
-        .banner .inner header::before {
+        /* Отключение стандартных разделителей темы */
+        .banner article .inner header p::after,
+        .banner article .inner header p::before,
+        .banner article .inner header::after,
+        .banner article .inner header::before {
             display: none !important;
             content: none !important;
         }
 
-        /* Наша полоса */
+        /* Собственная линия-разделитель */
         .header-divider {
             width: 100px !important;
             height: 2px !important;
@@ -102,8 +94,8 @@
             display: block !important;
         }
 
-        /* Название фото */
-        .banner .inner header h2 {
+        /* Название работы */
+        .banner article .inner header h2 {
             font-size: 2.2rem !important;
             margin: 0 !important;
             padding: 0 !important;
