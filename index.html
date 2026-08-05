@@ -37,26 +37,25 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
 
-        /* Текст специализации (жирный, с уменьшенным отступом снизу) */
+        /* Текст специализации (жирный, с аккуратным отступом до линии) */
         .banner .inner header p {
             font-weight: 700 !important;
             font-size: 0.95rem;
             text-transform: none;
             letter-spacing: 0.5px;
-            margin-bottom: 0.3rem !important;
+            margin-bottom: 0 !important;
             padding-bottom: 0 !important;
         }
 
-        /* Отступы для линии-разделителя под тегом p (если она задана через ::after) */
+        /* Корректируем отступы самой линии (сверху и снизу одинаковые по 0.4rem) */
         .banner .inner header p::after {
-            margin-top: 0.4rem !important;
-            margin-bottom: 0.4rem !important;
+            margin: 0.4rem auto !important;
         }
 
-        /* Название фотографии (с уменьшенным отступом сверху) */
+        /* Название фотографии (полностью убираем верхние отступы/падинги темы) */
         .banner .inner header h2 {
             font-size: 2.5rem;
-            margin-top: 0.3rem !important;
+            margin-top: 0 !important;
             padding-top: 0 !important;
         }
     </style>
