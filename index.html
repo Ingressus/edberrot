@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <!-- Фавикон -->
-    <link rel="icon" type="image/x-icon" href="favicon-16x16.png">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     
     <link rel="stylesheet" href="assets/css/main.css">
 
@@ -175,9 +175,13 @@
             box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5) !important;
         }
 
-        /* Отступ секции галереи снизу под кнопку */
+        /* Настройка внутренних отступов секции галереи */
         #three.wrapper {
-            padding-bottom: 3rem !important;
+            padding-bottom: 2rem !important;
+        }
+
+        #three.wrapper .inner {
+            text-align: center !important;
         }
 
         /* ВЫРАВНИВАНИЕ КАРТОЧЕК ГАЛЕРЕИ ДО ОДИНАКОВОГО РАЗМЕРА */
@@ -203,23 +207,29 @@
             object-position: center !important;
         }
 
-        /* НОВАЯ КНОПКА VIEW MORE ВНИЗУ ГАЛЕРЕИ */
+        /* КНОПКА VIEW MORE ВНИЗУ ГАЛЕРЕИ (Тёмный текст и рамка) */
         #three.wrapper a.view-all-link.bottom {
-            display: block !important;
-            width: max-content !important;
-            margin: 2rem auto 0 auto !important; /* Центрирование и отступ от карточек */
-            color: #ffffff !important;
+            display: inline-block !important;
+            margin: 2.5rem auto 1rem auto !important;
+            color: #555555 !important;
             background-color: transparent !important;
+            border: 2px solid #555555 !important;
+            border-radius: 4px !important;
             font-weight: 600 !important;
-            font-size: 0.95rem !important;
+            font-size: 0.85rem !important;
             text-decoration: none !important;
-            border: none !important;
-            transition: opacity 0.2s ease !important;
-            padding: 0 !important;
+            text-transform: uppercase !important;
+            letter-spacing: 2px !important;
+            padding: 0.6rem 2rem !important;
+            line-height: normal !important;
+            transition: all 0.2s ease !important;
         }
 
         #three.wrapper a.view-all-link.bottom:hover {
-            opacity: 0.7 !important;
+            color: #ffffff !important;
+            background-color: #555555 !important;
+            border-color: #555555 !important;
+            opacity: 1 !important;
         }
     </style>
 </head>
@@ -234,7 +244,7 @@
                 <li><a href="https://www.instagram.com/edberrot/" target="_blank" rel="noopener noreferrer" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
                 <li><a href="mailto:eedberrot@gmail.com" target="_blank" rel="noopener noreferrer" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
             </ul>
-            <!-- Прямая ссылка View all works справа -->
+            <!-- Прямая ссылка View more справа -->
             <a href="all.html" class="view-all-link">View more</a>
         </header>
 
@@ -341,7 +351,7 @@
                     </div>
                 </div>
 
-                <!-- НОВАЯ КНОПКА VIEW MORE ВНИЗУ ГАЛЕРЕИ -->
+                <!-- КНОПКА VIEW MORE ВНИЗУ ГАЛЕРЕИ -->
                 <a href="all.html" class="view-all-link bottom">View more</a>
 
             </div>
