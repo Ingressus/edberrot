@@ -20,6 +20,7 @@
 
     <!-- CSS библиотеки Slick Slider & Fancybox -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
 </head>
 <body>
@@ -149,31 +150,31 @@
         <script src="assets/js/jquery.scrollex.min.js"></script>
         <script src="assets/js/skel.min.js"></script>
         <script src="assets/js/util.js"></script>
-        <script src="assets/js/main.js"></script>
 
     <!-- JS Slick Slider & Fancybox -->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
 
-    <script>
-        // Инициализация карусели
-        $(document).ready(function(){
-            $('.gallery-slider').slick({
-                dots: false,
-                infinite: false,
-                speed: 400,
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                autoplay: false, // Автопрокрутка отключена
-                prevArrow: '<button type="button" class="slick-prev"><i class="fa fa-chevron-left"></i></button>',
-                nextArrow: '<button type="button" class="slick-next"><i class="fa fa-chevron-right"></i></button>'
-            });
-        });
+    <!-- Подключаем main.js только в конце -->
+    <script src="assets/js/main.js"></script>
 
-        // Инициализация Fancybox
-        Fancybox.bind('[data-fancybox="gallery"]', {
-            wheel: "slide",
+    <script>
+        $(window).on('load', function(){
+            if ($('.gallery-slider').length) {
+                $('.gallery-slider').slick({
+                    dots: true,
+                    infinite: false,
+                    speed: 400,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    autoplay: false,
+                    arrows: true
+                });
+            }
+
+            Fancybox.bind('[data-fancybox="gallery"]', {
+                wheel: "slide",
+            });
         });
     </script>
 </body>
