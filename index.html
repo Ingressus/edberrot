@@ -27,12 +27,12 @@
             padding: 0 !important;
         }
 
-        /* Выравнивание шапки: черный фон, иконки слева, Menu справа */
+        /* Выравнивание шапки: черный фон, иконки слева, кнопка справа */
         #header {
             display: flex !important;
             justify-content: space-between !important;
             align-items: center !important;
-            background-color: #000000 !important; /* Черный фон плашки */
+            background-color: #000000 !important;
             height: 3.5rem !important;
             line-height: 3.5rem !important;
             padding: 0 1.5rem !important;
@@ -72,8 +72,8 @@
             opacity: 0.7 !important;
         }
 
-        /* Кнопка Menu справа в черной плашке */
-        #header a[href="#menu"] {
+        /* Ссылка View all works справа в черной плашке */
+        #header a.view-all-link {
             position: relative !important;
             top: auto !important;
             right: auto !important;
@@ -81,12 +81,18 @@
             line-height: normal !important;
             color: #ffffff !important;
             font-weight: 600 !important;
+            font-size: 0.95rem !important;
             text-decoration: none !important;
             border: none !important;
             display: inline-flex !important;
             align-items: center !important;
             margin: 0 !important;
             padding: 0 !important;
+            transition: opacity 0.2s ease !important;
+        }
+
+        #header a.view-all-link:hover {
+            opacity: 0.7 !important;
         }
 
         /* Выравнивание и центрирование главного блока на слайде */
@@ -202,18 +208,9 @@
                 <li><a href="https://www.instagram.com/edberrot/" target="_blank" rel="noopener noreferrer" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
                 <li><a href="mailto:eedberrot@gmail.com" target="_blank" rel="noopener noreferrer" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
             </ul>
-            <!-- Кнопка Menu справа -->
-            <a href="#menu">Menu</a>
+            <!-- Прямая ссылка View all works справа -->
+            <a href="all.html" class="view-all-link">View all works</a>
         </header>
-
-    <!-- Nav -->
-        <nav id="menu">
-            <ul class="links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="generic.html">Generic</a></li>
-                <li><a href="elements.html">Elements</a></li>
-            </ul>
-        </nav>
 
     <!-- Banner -->
         <section class="banner full">
