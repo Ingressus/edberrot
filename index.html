@@ -21,6 +21,12 @@
 
     <!-- СТИЛИ ДЛЯ ЦЕНТРАЛЬНОГО БЛОКА, ВЕРХНИХ ИКОНОК И ГАЛЕРЕИ -->
     <style>
+        /* Сброс верхних отступов страницы (убирает белую полосу сверху) */
+        html, body {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
         /* Выравнивание шапки: черный фон, иконки слева, Menu справа */
         #header {
             display: flex !important;
@@ -31,6 +37,10 @@
             line-height: 3.5rem !important;
             padding: 0 1.5rem !important;
             position: relative !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            margin: 0 !important;
             z-index: 1000 !important;
         }
 
