@@ -21,18 +21,44 @@
 
     <!-- СТИЛИ ДЛЯ ЦЕНТРАЛЬНОГО БЛОКА, ВЕРХНИХ ИКОНОК И ГАЛЕРЕИ -->
     <style>
-        /* Отображение и стилизация блока иконок слева вверху */
+        /* Сброс верхних отступов страницы (убирает белую полосу сверху) */
+        html, body {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        /* Выравнивание шапки: полупрозрачный фон, иконки слева, кнопка справа */
+        #header {
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            background-color: rgba(0, 0, 0, 0.6) !important; /* Полупрозрачный черный */
+            backdrop-filter: blur(5px) !important; /* Эффект матового размытия фона */
+            -webkit-backdrop-filter: blur(5px) !important;
+            height: 3.5rem !important;
+            line-height: 3.5rem !important;
+            padding: 0 1.5rem !important;
+            position: absolute !important; /* Накладываем поверх слайдера */
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            margin: 0 !important;
+            z-index: 1000 !important;
+        }
+
+        /* Иконки соцсетей слева */
         #header .header-socials {
             display: flex !important;
             align-items: center !important;
             gap: 1.2rem !important;
             list-style: none !important;
             margin: 0 !important;
-            padding: 0 0 0 1rem !important;
+            padding: 0 !important;
         }
 
         #header .header-socials li {
-            display: inline-block !important;
+            display: inline-flex !important;
+            align-items: center !important;
             padding: 0 !important;
         }
 
@@ -48,20 +74,28 @@
             opacity: 0.7 !important;
         }
 
-        /* Кнопка Return в правом верхнем углу */
-        #header .nav-return {
+        /* Ссылка Home справа в черной плашке */
+        #header a.nav-home {
+            position: relative !important;
+            top: auto !important;
+            right: auto !important;
+            height: auto !important;
+            line-height: normal !important;
             color: #ffffff !important;
-            text-decoration: none !important;
             font-weight: 600 !important;
-            letter-spacing: 1px !important;
+            text-decoration: none !important;
+            border: none !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            transition: opacity 0.2s ease !important;
             text-transform: uppercase !important;
             font-size: 0.85rem !important;
-            padding: 0 1.5rem !important;
-            border: none !important;
-            transition: opacity 0.2s ease !important;
+            letter-spacing: 1px !important;
         }
 
-        #header .nav-return:hover {
+        #header a.nav-home:hover {
             opacity: 0.7 !important;
         }
 
@@ -145,7 +179,7 @@
 
         /* ВЫРАВНИВАНИЕ КАРТОЧЕК ГАЛЕРЕИ ДО ОДИНАКОВОГО РАЗМЕРА */
         .gallery .image.fit {
-            height: 320px !important;
+            height: 320px !important; /* Фиксированная одинаковая высота */
             overflow: hidden !important;
             display: flex !important;
             align-items: center !important;
@@ -162,7 +196,7 @@
         .gallery .image.fit img {
             width: 100% !important;
             height: 100% !important;
-            object-fit: cover !important;
+            object-fit: cover !important; /* Обрезает излишки, делая картинки строго одинаковыми */
             object-position: center !important;
         }
     </style>
@@ -178,8 +212,8 @@
                 <li><a href="https://www.instagram.com/edberrot/" target="_blank" rel="noopener noreferrer" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
                 <li><a href="mailto:eedberrot@gmail.com" target="_blank" rel="noopener noreferrer" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
             </ul>
-            <!-- Кнопка Return справа вверху -->
-            <a href="index.html" class="nav-return">Return</a>
+            <!-- Кнопка Home справа вверху, ведет на index.html -->
+            <a href="index.html" class="nav-home">Home</a>
         </header>
 
     <!-- Banner -->
@@ -292,7 +326,7 @@
                     <div><div class="image fit"><a href="images/2035.png" data-fancybox="gallery"><img src="images/2035.png" alt="Work 2035"></a></div></div>
                     <div><div class="image fit"><a href="images/2036.png" data-fancybox="gallery"><img src="images/2036.png" alt="Work 2036"></a></div></div>
                     <div><div class="image fit"><a href="images/2037.png" data-fancybox="gallery"><img src="images/2037.png" alt="Work 2037"></a></div></div>
-                    <div><div class="image fit"><a href="images/2038.png" data-fancybox="gallery"><img src="images/2038.jpg" alt="Work 2038"></a></div></div>
+                    <div><div class="image fit"><a href="images/2038.jpg" data-fancybox="gallery"><img src="images/2038.jpg" alt="Work 2038"></a></div></div>
                     <div><div class="image fit"><a href="images/2039.png" data-fancybox="gallery"><img src="images/2039.png" alt="Work 2039"></a></div></div>
                     <div><div class="image fit"><a href="images/2040.png" data-fancybox="gallery"><img src="images/2040.png" alt="Work 2040"></a></div></div>
                     <div><div class="image fit"><a href="images/2041.png" data-fancybox="gallery"><img src="images/2041.png" alt="Work 2041"></a></div></div>
