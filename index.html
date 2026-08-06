@@ -21,22 +21,24 @@
 
     <!-- СТИЛИ ДЛЯ ЦЕНТРАЛЬНОГО БЛОКА, ВЕРХНИХ ИКОНОК И ГАЛЕРЕИ -->
     <style>
-        /* Сброс верхних отступов страницы (убирает белую полосу сверху) */
+        /* Сброс верхних отступов страницы */
         html, body {
             margin: 0 !important;
             padding: 0 !important;
         }
 
-        /* Выравнивание шапки: черный фон, иконки слева, кнопка справа */
+        /* Выравнивание шапки: полупрозрачный фон, иконки слева, кнопка справа */
         #header {
             display: flex !important;
             justify-content: space-between !important;
             align-items: center !important;
-            background-color: #000000 !important;
+            background-color: rgba(0, 0, 0, 0.6) !important; /* Полупрозрачный черный */
+            backdrop-filter: blur(5px) !important; /* Эффект матового размытия */
+            -webkit-backdrop-filter: blur(5px) !important;
             height: 3.5rem !important;
             line-height: 3.5rem !important;
             padding: 0 1.5rem !important;
-            position: relative !important;
+            position: absolute !important; /* Наложение плашки поверх первого слайда */
             top: 0 !important;
             left: 0 !important;
             width: 100% !important;
@@ -72,7 +74,7 @@
             opacity: 0.7 !important;
         }
 
-        /* Ссылка View all works справа в черной плашке */
+        /* Ссылка View all works справа в полупрозрачной плашке */
         #header a.view-all-link {
             position: relative !important;
             top: auto !important;
