@@ -6,7 +6,7 @@
 -->
 <html>
 <head>
-    <title>Valeria K. Digital Artist - All Works</title>
+    <title>All Artworks - Valeria K.</title>
     <meta charset="utf-8">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,326 +14,115 @@
     <!-- Фавикон -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     
+    <!-- Подключение CSS файлов -->
     <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
 
-    <!-- CSS библиотеки Fancybox для увеличения картинок -->
+    <!-- CSS библиотеки Slick Slider & Fancybox -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
-
-    <!-- СТИЛИ ДЛЯ ЦЕНТРАЛЬНОГО БЛОКА, ВЕРХНИХ ИКОНОК И ГАЛЕРЕИ -->
-    <style>
-        /* Сброс верхних отступов страницы (убирает белую полосу сверху) */
-        html, body {
-            margin: 0 !important;
-            padding: 0 !important;
-        }
-
-        /* Выравнивание шапки: полупрозрачный фон, иконки слева, кнопка справа */
-        #header {
-            display: flex !important;
-            justify-content: space-between !important;
-            align-items: center !important;
-            background-color: rgba(0, 0, 0, 0.6) !important; /* Полупрозрачный черный */
-            backdrop-filter: blur(5px) !important; /* Эффект матового размытия фона */
-            -webkit-backdrop-filter: blur(5px) !important;
-            height: 3.5rem !important;
-            line-height: 3.5rem !important;
-            padding: 0 1.5rem !important;
-            position: absolute !important; /* Накладываем поверх слайдера */
-            top: 0 !important;
-            left: 0 !important;
-            width: 100% !important;
-            margin: 0 !important;
-            z-index: 1000 !important;
-        }
-
-        /* Иконки соцсетей слева */
-        #header .header-socials {
-            display: flex !important;
-            align-items: center !important;
-            gap: 1.2rem !important;
-            list-style: none !important;
-            margin: 0 !important;
-            padding: 0 !important;
-        }
-
-        #header .header-socials li {
-            display: inline-flex !important;
-            align-items: center !important;
-            padding: 0 !important;
-        }
-
-        #header .header-socials a {
-            color: #ffffff !important;
-            font-size: 1.2rem !important;
-            text-decoration: none !important;
-            border: none !important;
-            transition: opacity 0.2s ease !important;
-        }
-
-        #header .header-socials a:hover {
-            opacity: 0.7 !important;
-        }
-
-        /* Ссылка Home справа в черной плашке */
-        #header a.nav-home {
-            position: relative !important;
-            top: auto !important;
-            right: auto !important;
-            height: auto !important;
-            line-height: normal !important;
-            color: #ffffff !important;
-            font-weight: 600 !important;
-            text-decoration: none !important;
-            border: none !important;
-            display: inline-flex !important;
-            align-items: center !important;
-            margin: 0 !important;
-            padding: 0 !important;
-            transition: opacity 0.2s ease !important;
-            text-transform: uppercase !important;
-            font-size: 0.85rem !important;
-            letter-spacing: 1px !important;
-        }
-
-        #header a.nav-home:hover {
-            opacity: 0.7 !important;
-        }
-
-        /* Выравнивание и центрирование главного блока на слайде */
-        .banner article .inner {
-            position: absolute !important;
-            top: 50% !important;
-            left: 50% !important;
-            bottom: auto !important;
-            right: auto !important;
-            transform: translate(-50%, -50%) !important;
-            -webkit-transform: translate(-50%, -50%) !important;
-            
-            display: flex !important;
-            flex-direction: column !important;
-            align-items: center !important;
-            justify-content: center !important;
-            
-            width: 90% !important;
-            max-width: 800px !important;
-            margin: 0 !important;
-            padding: 0 !important;
-            z-index: 2 !important;
-        }
-
-        .banner article .inner header {
-            display: flex !important;
-            flex-direction: column !important;
-            align-items: center !important;
-            justify-content: center !important;
-            width: 100% !important;
-            margin: 0 !important;
-            padding: 0 !important;
-        }
-
-        /* 1. Главный заголовок по центру */
-        .banner article .inner header h1.main-title {
-            font-size: 3rem !important;
-            font-weight: 700 !important;
-            color: #ffffff !important;
-            margin: 0 0 0.4rem 0 !important;
-            padding: 0 !important;
-            line-height: 1.1 !important;
-            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6) !important;
-            text-transform: none !important;
-        }
-
-        /* 2. Текст специализации */
-        .banner article .inner header p.main-subtitle {
-            font-weight: 600 !important;
-            font-size: 1.05rem !important;
-            text-transform: none !important;
-            letter-spacing: 0.5px !important;
-            margin: 0 0 1rem 0 !important;
-            padding: 0 !important;
-            line-height: 1.3 !important;
-            color: rgba(255, 255, 255, 0.95) !important;
-            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7) !important;
-        }
-
-        /* Отключение стандартных разделителей темы */
-        .banner article .inner header p::after,
-        .banner article .inner header p::before,
-        .banner article .inner header::after,
-        .banner article .inner header::before {
-            display: none !important;
-            content: none !important;
-        }
-
-        /* 3. Портрет под текстом */
-        .carousel-profile-img {
-            display: block !important;
-            width: 85px !important;
-            height: 85px !important;
-            border-radius: 50% !important;
-            object-fit: cover !important;
-            border: 3px solid rgba(255, 255, 255, 0.8) !important;
-            margin: 0 auto !important;
-            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5) !important;
-        }
-
-        /* ПОДЖИМАЕМ СЕКЦИЮ ГАЛЕРЕИ ВВЕРХ (Убираем пустой отступ) */
-        #three.wrapper {
-            padding-top: 2rem !important;
-        }
-
-        /* ВЫРАВНИВАНИЕ КАРТОЧЕК ГАЛЕРЕИ ДО ОДИНАКОВОГО РАЗМЕРА */
-        .gallery .image.fit {
-            height: 320px !important; /* Фиксированная одинаковая высота */
-            overflow: hidden !important;
-            display: flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-        }
-
-        .gallery .image.fit a {
-            display: block !important;
-            width: 100% !important;
-            height: 100% !important;
-            cursor: pointer;
-        }
-
-        .gallery .image.fit img {
-            width: 100% !important;
-            height: 100% !important;
-            object-fit: cover !important; /* Обрезает излишки, делая картинки строго одинаковыми */
-            object-position: center !important;
-        }
-    </style>
 </head>
 <body>
 
     <!-- Header -->
         <header id="header" class="alt">
-            <!-- Иконки соцсетей слева вверху -->
+            <!-- Иконки соцсетей слева -->
             <ul class="header-socials">
                 <li><a href="https://t.me/edberrot" target="_blank" rel="noopener noreferrer" class="icon fa-paper-plane"><span class="label">Telegram</span></a></li>
                 <li><a href="https://www.facebook.com/people/%D0%92%D0%B0%D0%BB%D0%B5%D1%80%D0%B8%D1%8F-%D0%9A%D1%83%D0%B7%D1%8C%D0%BC%D0%B8%D0%BD%D1%81%D0%BA%D0%B0%D1%8F/pfbid0pXDk7a8bsMSmAfDk1e4Dm78aVTQTT69D58wuwoewN7Ts186sJwYt1mhaVX1PuV2Gl/" target="_blank" rel="noopener noreferrer" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
                 <li><a href="https://www.instagram.com/edberrot/" target="_blank" rel="noopener noreferrer" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
                 <li><a href="mailto:eedberrot@gmail.com" target="_blank" rel="noopener noreferrer" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
             </ul>
-            <!-- Кнопка Home справа вверху, ведет на index.html -->
-            <a href="index.html" class="nav-home">Home</a>
+            <!-- Ссылка на главную страницу -->
+            <a href="index.html" class="view-all-link">Home</a>
         </header>
 
-    <!-- Banner -->
-        <section class="banner full">
-            
-            <!-- СЛАЙД 1 -->
-            <article>
-                <img src="images/slide01.png" alt="" width="1440" height="961">
-                <div class="inner">
-                    <header>
-                        <h1 class="main-title">Valeria K. Digital Artist</h1>
-                        <p class="main-subtitle">2D Artist / Illustrator | Located at Kharkiv Ukraine</p>
-                        <img src="images/profile.png" alt="Valeria K." class="carousel-profile-img">
-                    </header>
-                </div>
-            </article>
-
-            <!-- СЛАЙД 2 -->
-            <article>
-                <img src="images/slide02.png" alt="" width="1440" height="961">
-                <div class="inner">
-                    <header>
-                        <h1 class="main-title">Valeria K. Digital Artist</h1>
-                        <p class="main-subtitle">2D Artist / Illustrator | Located at Kharkiv Ukraine</p>
-                        <img src="images/profile.png" alt="Valeria K." class="carousel-profile-img">
-                    </header>
-                </div>
-            </article>
-
-            <!-- СЛАЙД 3 -->
-            <article>
-                <img src="images/slide03.jpg" alt="" width="1440" height="962">
-                <div class="inner">
-                    <header>
-                        <h1 class="main-title">Valeria K. Digital Artist</h1>
-                        <p class="main-subtitle">2D Artist / Illustrator | Located at Kharkiv Ukraine</p>
-                        <img src="images/profile.png" alt="Valeria K." class="carousel-profile-img">
-                    </header>
-                </div>
-            </article>
-
-            <!-- СЛАЙД 4 -->
-            <article>
-                <img src="images/slide04.png" alt="" width="1440" height="961">
-                <div class="inner">
-                    <header>
-                        <h1 class="main-title">Valeria K. Digital Artist</h1>
-                        <p class="main-subtitle">2D Artist / Illustrator | Located at Kharkiv Ukraine</p>
-                        <img src="images/profile.png" alt="Valeria K." class="carousel-profile-img">
-                    </header>
-                </div>
-            </article>
-
-            <!-- СЛАЙД 5 -->
-            <article>
-                <img src="images/slide05.jpg" alt="" width="1440" height="962">
-                <div class="inner">
-                    <header>
-                        <h1 class="main-title">Valeria K. Digital Artist</h1>
-                        <p class="main-subtitle">2D Artist / Illustrator | Located at Kharkiv Ukraine</p>
-                        <img src="images/profile.png" alt="Valeria K." class="carousel-profile-img">
-                    </header>
-                </div>
-            </article>
-            
-        </section>
-
-    <!-- Gallery ALL WORKS -->
-        <section id="three" class="wrapper style2">
+    <!-- Main Content / Gallery -->
+        <section id="three" class="wrapper style2" style="padding-top: 5rem;">
             <div class="inner">
-                <div class="gallery">
-                    <div><div class="image fit"><a href="images/2001.png" data-fancybox="gallery"><img src="images/2001.png" alt="Work 2001"></a></div></div>
-                    <div><div class="image fit"><a href="images/2002.png" data-fancybox="gallery"><img src="images/2002.png" alt="Work 2002"></a></div></div>
-                    <div><div class="image fit"><a href="images/2003.jpg" data-fancybox="gallery"><img src="images/2003.jpg" alt="Work 2003"></a></div></div>
-                    <div><div class="image fit"><a href="images/2004.jpg" data-fancybox="gallery"><img src="images/2004.jpg" alt="Work 2004"></a></div></div>
-                    <div><div class="image fit"><a href="images/2005.jpg" data-fancybox="gallery"><img src="images/2005.jpg" alt="Work 2005"></a></div></div>
-                    <div><div class="image fit"><a href="images/2006.jpg" data-fancybox="gallery"><img src="images/2006.jpg" alt="Work 2006"></a></div></div>
-                    <div><div class="image fit"><a href="images/2007.jpg" data-fancybox="gallery"><img src="images/2007.jpg" alt="Work 2007"></a></div></div>
-                    <div><div class="image fit"><a href="images/2008.jpg" data-fancybox="gallery"><img src="images/2008.jpg" alt="Work 2008"></a></div></div>
-                    <div><div class="image fit"><a href="images/2009.png" data-fancybox="gallery"><img src="images/2009.png" alt="Work 2009"></a></div></div>
-                    <div><div class="image fit"><a href="images/2010.png" data-fancybox="gallery"><img src="images/2010.png" alt="Work 2010"></a></div></div>
-                    <div><div class="image fit"><a href="images/2011.png" data-fancybox="gallery"><img src="images/2011.png" alt="Work 2011"></a></div></div>
-                    <div><div class="image fit"><a href="images/2012.png" data-fancybox="gallery"><img src="images/2012.png" alt="Work 2012"></a></div></div>
-                    <div><div class="image fit"><a href="images/2013.png" data-fancybox="gallery"><img src="images/2013.png" alt="Work 2013"></a></div></div>
-                    <div><div class="image fit"><a href="images/2014.png" data-fancybox="gallery"><img src="images/2014.png" alt="Work 2014"></a></div></div>
-                    <div><div class="image fit"><a href="images/2015.png" data-fancybox="gallery"><img src="images/2015.png" alt="Work 2015"></a></div></div>
-                    <div><div class="image fit"><a href="images/2016.png" data-fancybox="gallery"><img src="images/2016.png" alt="Work 2016"></a></div></div>
-                    <div><div class="image fit"><a href="images/2017.jpg" data-fancybox="gallery"><img src="images/2017.jpg" alt="Work 2017"></a></div></div>
-                    <div><div class="image fit"><a href="images/2018.png" data-fancybox="gallery"><img src="images/2018.png" alt="Work 2018"></a></div></div>
-                    <div><div class="image fit"><a href="images/2019.png" data-fancybox="gallery"><img src="images/2019.png" alt="Work 2019"></a></div></div>
-                    <div><div class="image fit"><a href="images/2020.png" data-fancybox="gallery"><img src="images/2020.png" alt="Work 2020"></a></div></div>
-                    <div><div class="image fit"><a href="images/2021.png" data-fancybox="gallery"><img src="images/2021.png" alt="Work 2021"></a></div></div>
-                    <div><div class="image fit"><a href="images/2022.png" data-fancybox="gallery"><img src="images/2022.png" alt="Work 2022"></a></div></div>
-                    <div><div class="image fit"><a href="images/2023.png" data-fancybox="gallery"><img src="images/2023.png" alt="Work 2023"></a></div></div>
-                    <div><div class="image fit"><a href="images/2024.png" data-fancybox="gallery"><img src="images/2024.png" alt="Work 2024"></a></div></div>
-                    <div><div class="image fit"><a href="images/2025.png" data-fancybox="gallery"><img src="images/2025.png" alt="Work 2025"></a></div></div>
-                    <div><div class="image fit"><a href="images/2026.png" data-fancybox="gallery"><img src="images/2026.png" alt="Work 2026"></a></div></div>
-                    <div><div class="image fit"><a href="images/2027.png" data-fancybox="gallery"><img src="images/2027.png" alt="Work 2027"></a></div></div>
-                    <div><div class="image fit"><a href="images/2028.png" data-fancybox="gallery"><img src="images/2028.png" alt="Work 2028"></a></div></div>
-                    <div><div class="image fit"><a href="images/2029.png" data-fancybox="gallery"><img src="images/2029.png" alt="Work 2029"></a></div></div>
-                    <div><div class="image fit"><a href="images/2030.jpg" data-fancybox="gallery"><img src="images/2030.jpg" alt="Work 2030"></a></div></div>
-                    <div><div class="image fit"><a href="images/2031.png" data-fancybox="gallery"><img src="images/2031.png" alt="Work 2031"></a></div></div>
-                    <div><div class="image fit"><a href="images/2032.jpg" data-fancybox="gallery"><img src="images/2032.jpg" alt="Work 2032"></a></div></div>
-                    <div><div class="image fit"><a href="images/2033.png" data-fancybox="gallery"><img src="images/2033.png" alt="Work 2033"></a></div></div>
-                    <div><div class="image fit"><a href="images/2034.png" data-fancybox="gallery"><img src="images/2034.png" alt="Work 2034"></a></div></div>
-                    <div><div class="image fit"><a href="images/2035.png" data-fancybox="gallery"><img src="images/2035.png" alt="Work 2035"></a></div></div>
-                    <div><div class="image fit"><a href="images/2036.png" data-fancybox="gallery"><img src="images/2036.png" alt="Work 2036"></a></div></div>
-                    <div><div class="image fit"><a href="images/2037.png" data-fancybox="gallery"><img src="images/2037.png" alt="Work 2037"></a></div></div>
-                    <div><div class="image fit"><a href="images/2038.jpg" data-fancybox="gallery"><img src="images/2038.jpg" alt="Work 2038"></a></div></div>
-                    <div><div class="image fit"><a href="images/2039.png" data-fancybox="gallery"><img src="images/2039.png" alt="Work 2039"></a></div></div>
-                    <div><div class="image fit"><a href="images/2040.png" data-fancybox="gallery"><img src="images/2040.png" alt="Work 2040"></a></div></div>
-                    <div><div class="image fit"><a href="images/2041.png" data-fancybox="gallery"><img src="images/2041.png" alt="Work 2041"></a></div></div>
-                    <div><div class="image fit"><a href="images/2042.png" data-fancybox="gallery"><img src="images/2042.png" alt="Work 2042"></a></div></div>
-                    <div><div class="image fit"><a href="images/2043.png" data-fancybox="gallery"><img src="images/2043.png" alt="Work 2043"></a></div></div>
+                <header class="align-center">
+                    <p class="special">All Portfolio Artworks</p>
+                    <h2>2D Artist / Illustrator</h2>
+                </header>
+
+                <!-- Карусель с блоками по 10 фото -->
+                <div class="gallery-slider">
+                    
+                    <!-- СЛАЙД 1 (2001 - 2010) -->
+                    <div>
+                        <div class="gallery-grid-ten">
+                            <div class="image fit"><a href="images/2001.png" data-fancybox="gallery"><img src="images/2001.png" alt="Work 2001"></a></div>
+                            <div class="image fit"><a href="images/2002.png" data-fancybox="gallery"><img src="images/2002.png" alt="Work 2002"></a></div>
+                            <div class="image fit"><a href="images/2003.png" data-fancybox="gallery"><img src="images/2003.png" alt="Work 2003"></a></div>
+                            <div class="image fit"><a href="images/2004.png" data-fancybox="gallery"><img src="images/2004.png" alt="Work 2004"></a></div>
+                            <div class="image fit"><a href="images/2005.png" data-fancybox="gallery"><img src="images/2005.png" alt="Work 2005"></a></div>
+                            <div class="image fit"><a href="images/2006.png" data-fancybox="gallery"><img src="images/2006.png" alt="Work 2006"></a></div>
+                            <div class="image fit"><a href="images/2007.png" data-fancybox="gallery"><img src="images/2007.png" alt="Work 2007"></a></div>
+                            <div class="image fit"><a href="images/2008.png" data-fancybox="gallery"><img src="images/2008.png" alt="Work 2008"></a></div>
+                            <div class="image fit"><a href="images/2009.png" data-fancybox="gallery"><img src="images/2009.png" alt="Work 2009"></a></div>
+                            <div class="image fit"><a href="images/2010.png" data-fancybox="gallery"><img src="images/2010.png" alt="Work 2010"></a></div>
+                        </div>
+                    </div>
+
+                    <!-- СЛАЙД 2 (2011 - 2020) -->
+                    <div>
+                        <div class="gallery-grid-ten">
+                            <div class="image fit"><a href="images/2011.png" data-fancybox="gallery"><img src="images/2011.png" alt="Work 2011"></a></div>
+                            <div class="image fit"><a href="images/2012.png" data-fancybox="gallery"><img src="images/2012.png" alt="Work 2012"></a></div>
+                            <div class="image fit"><a href="images/2013.png" data-fancybox="gallery"><img src="images/2013.png" alt="Work 2013"></a></div>
+                            <div class="image fit"><a href="images/2014.png" data-fancybox="gallery"><img src="images/2014.png" alt="Work 2014"></a></div>
+                            <div class="image fit"><a href="images/2015.png" data-fancybox="gallery"><img src="images/2015.png" alt="Work 2015"></a></div>
+                            <div class="image fit"><a href="images/2016.png" data-fancybox="gallery"><img src="images/2016.png" alt="Work 2016"></a></div>
+                            <div class="image fit"><a href="images/2017.png" data-fancybox="gallery"><img src="images/2017.png" alt="Work 2017"></a></div>
+                            <div class="image fit"><a href="images/2018.png" data-fancybox="gallery"><img src="images/2018.png" alt="Work 2018"></a></div>
+                            <div class="image fit"><a href="images/2019.png" data-fancybox="gallery"><img src="images/2019.png" alt="Work 2019"></a></div>
+                            <div class="image fit"><a href="images/2020.png" data-fancybox="gallery"><img src="images/2020.png" alt="Work 2020"></a></div>
+                        </div>
+                    </div>
+
+                    <!-- СЛАЙД 3 (2021 - 2030) -->
+                    <div>
+                        <div class="gallery-grid-ten">
+                            <div class="image fit"><a href="images/2021.png" data-fancybox="gallery"><img src="images/2021.png" alt="Work 2021"></a></div>
+                            <div class="image fit"><a href="images/2022.png" data-fancybox="gallery"><img src="images/2022.png" alt="Work 2022"></a></div>
+                            <div class="image fit"><a href="images/2023.png" data-fancybox="gallery"><img src="images/2023.png" alt="Work 2023"></a></div>
+                            <div class="image fit"><a href="images/2024.png" data-fancybox="gallery"><img src="images/2024.png" alt="Work 2024"></a></div>
+                            <div class="image fit"><a href="images/2025.png" data-fancybox="gallery"><img src="images/2025.png" alt="Work 2025"></a></div>
+                            <div class="image fit"><a href="images/2026.png" data-fancybox="gallery"><img src="images/2026.png" alt="Work 2026"></a></div>
+                            <div class="image fit"><a href="images/2027.png" data-fancybox="gallery"><img src="images/2027.png" alt="Work 2027"></a></div>
+                            <div class="image fit"><a href="images/2028.png" data-fancybox="gallery"><img src="images/2028.png" alt="Work 2028"></a></div>
+                            <div class="image fit"><a href="images/2029.png" data-fancybox="gallery"><img src="images/2029.png" alt="Work 2029"></a></div>
+                            <div class="image fit"><a href="images/2030.png" data-fancybox="gallery"><img src="images/2030.png" alt="Work 2030"></a></div>
+                        </div>
+                    </div>
+
+                    <!-- СЛАЙД 4 (2031 - 2040) -->
+                    <div>
+                        <div class="gallery-grid-ten">
+                            <div class="image fit"><a href="images/2031.png" data-fancybox="gallery"><img src="images/2031.png" alt="Work 2031"></a></div>
+                            <div class="image fit"><a href="images/2032.png" data-fancybox="gallery"><img src="images/2032.png" alt="Work 2032"></a></div>
+                            <div class="image fit"><a href="images/2033.png" data-fancybox="gallery"><img src="images/2033.png" alt="Work 2033"></a></div>
+                            <div class="image fit"><a href="images/2034.png" data-fancybox="gallery"><img src="images/2034.png" alt="Work 2034"></a></div>
+                            <div class="image fit"><a href="images/2035.png" data-fancybox="gallery"><img src="images/2035.png" alt="Work 2035"></a></div>
+                            <div class="image fit"><a href="images/2036.png" data-fancybox="gallery"><img src="images/2036.png" alt="Work 2036"></a></div>
+                            <div class="image fit"><a href="images/2037.png" data-fancybox="gallery"><img src="images/2037.png" alt="Work 2037"></a></div>
+                            <div class="image fit"><a href="images/2038.png" data-fancybox="gallery"><img src="images/2038.png" alt="Work 2038"></a></div>
+                            <div class="image fit"><a href="images/2039.png" data-fancybox="gallery"><img src="images/2039.png" alt="Work 2039"></a></div>
+                            <div class="image fit"><a href="images/2040.png" data-fancybox="gallery"><img src="images/2040.png" alt="Work 2040"></a></div>
+                        </div>
+                    </div>
+
+                    <!-- СЛАЙД 5 (2041 - 2043) -->
+                    <div>
+                        <div class="gallery-grid-ten">
+                            <div class="image fit"><a href="images/2041.png" data-fancybox="gallery"><img src="images/2041.png" alt="Work 2041"></a></div>
+                            <div class="image fit"><a href="images/2042.png" data-fancybox="gallery"><img src="images/2042.png" alt="Work 2042"></a></div>
+                            <div class="image fit"><a href="images/2043.png" data-fancybox="gallery"><img src="images/2043.png" alt="Work 2043"></a></div>
+                        </div>
+                    </div>
+
                 </div>
+
             </div>
         </section>
 
@@ -341,13 +130,9 @@
         <footer id="footer">
             <div class="container">
                 <ul class="icons">
-                    <!-- Telegram -->
                     <li><a href="https://t.me/edberrot" target="_blank" rel="noopener noreferrer" class="icon fa-paper-plane"><span class="label">Telegram</span></a></li>
-                    <!-- Facebook -->
                     <li><a href="https://www.facebook.com/people/%D0%92%D0%B0%D0%BB%D0%B5%D1%80%D0%B8%D1%8F-%D0%9A%D1%83%D0%B7%D1%8C%D0%BC%D0%B8%D0%BD%D1%81%D0%BA%D0%B0%D1%8F/pfbid0pXDk7a8bsMSmAfDk1e4Dm78aVTQTT69D58wuwoewN7Ts186sJwYt1mhaVX1PuV2Gl/" target="_blank" rel="noopener noreferrer" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-                    <!-- Instagram -->
                     <li><a href="https://www.instagram.com/edberrot/" target="_blank" rel="noopener noreferrer" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-                    <!-- Email -->
                     <li><a href="mailto:eedberrot@gmail.com" target="_blank" rel="noopener noreferrer" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
                 </ul>
             </div>
@@ -366,9 +151,27 @@
         <script src="assets/js/util.js"></script>
         <script src="assets/js/main.js"></script>
 
-    <!-- Скрипт Fancybox -->
+    <!-- JS Slick Slider & Fancybox -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+
     <script>
+        // Инициализация карусели
+        $(document).ready(function(){
+            $('.gallery-slider').slick({
+                dots: false,
+                infinite: false,
+                speed: 400,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: false, // Автопрокрутка отключена
+                prevArrow: '<button type="button" class="slick-prev"><i class="fa fa-chevron-left"></i></button>',
+                nextArrow: '<button type="button" class="slick-next"><i class="fa fa-chevron-right"></i></button>'
+            });
+        });
+
+        // Инициализация Fancybox
         Fancybox.bind('[data-fancybox="gallery"]', {
             wheel: "slide",
         });
