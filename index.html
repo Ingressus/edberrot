@@ -21,18 +21,32 @@
 
     <!-- СТИЛИ ДЛЯ ЦЕНТРАЛЬНОГО БЛОКА, ВЕРХНИХ ИКОНОК И ГАЛЕРЕИ -->
     <style>
-        /* Отображение и стилизация блока иконок слева вверху */
+        /* Выравнивание шапки: черный фон, иконки слева, Menu справа */
+        #header {
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            background-color: #000000 !important; /* Черный фон плашки */
+            height: 3.5rem !important;
+            line-height: 3.5rem !important;
+            padding: 0 1.5rem !important;
+            position: relative !important;
+            z-index: 1000 !important;
+        }
+
+        /* Иконки соцсетей слева */
         #header .header-socials {
             display: flex !important;
             align-items: center !important;
             gap: 1.2rem !important;
             list-style: none !important;
             margin: 0 !important;
-            padding: 0 0 0 1rem !important;
+            padding: 0 !important;
         }
 
         #header .header-socials li {
-            display: inline-block !important;
+            display: inline-flex !important;
+            align-items: center !important;
             padding: 0 !important;
         }
 
@@ -46,6 +60,23 @@
 
         #header .header-socials a:hover {
             opacity: 0.7 !important;
+        }
+
+        /* Кнопка Menu справа в черной плашке */
+        #header a[href="#menu"] {
+            position: relative !important;
+            top: auto !important;
+            right: auto !important;
+            height: auto !important;
+            line-height: normal !important;
+            color: #ffffff !important;
+            font-weight: 600 !important;
+            text-decoration: none !important;
+            border: none !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            margin: 0 !important;
+            padding: 0 !important;
         }
 
         /* Выравнивание и центрирование главного блока на слайде */
@@ -154,13 +185,14 @@
 
     <!-- Header -->
         <header id="header" class="alt">
-            <!-- Иконки соцсетей слева вверху вместо старого текста -->
+            <!-- Иконки соцсетей слева -->
             <ul class="header-socials">
                 <li><a href="https://t.me/edberrot" target="_blank" rel="noopener noreferrer" class="icon fa-paper-plane"><span class="label">Telegram</span></a></li>
                 <li><a href="https://www.facebook.com/people/%D0%92%D0%B0%D0%BB%D0%B5%D1%80%D0%B8%D1%8F-%D0%9A%D1%83%D0%B7%D1%8C%D0%BC%D0%B8%D0%BD%D1%81%D0%BA%D0%B0%D1%8F/pfbid0pXDk7a8bsMSmAfDk1e4Dm78aVTQTT69D58wuwoewN7Ts186sJwYt1mhaVX1PuV2Gl/" target="_blank" rel="noopener noreferrer" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
                 <li><a href="https://www.instagram.com/edberrot/" target="_blank" rel="noopener noreferrer" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
                 <li><a href="mailto:eedberrot@gmail.com" target="_blank" rel="noopener noreferrer" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
             </ul>
+            <!-- Кнопка Menu справа -->
             <a href="#menu">Menu</a>
         </header>
 
