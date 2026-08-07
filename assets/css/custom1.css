@@ -1,0 +1,137 @@
+/* ==========================================================================
+   СТИЛИ ИСКЛЮЧИТЕЛЬНО ДЛЯ СТРАНИЦЫ ALL.HTML
+   ========================================================================== */
+
+/* Темная верхняя панель (Header) */
+#header {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    background-color: #505357 !important;
+    height: 3.5rem !important;
+    line-height: 3.5rem !important;
+    padding: 0 1.5rem !important;
+    position: relative !important;
+    width: 100% !important;
+    margin: 0 !important;
+    z-index: 1000 !important;
+}
+
+/* Соцсети слева в шапке */
+#header .header-socials {
+    display: flex !important;
+    align-items: center !important;
+    gap: 1.2rem !important;
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+#header .header-socials li {
+    display: inline-flex !important;
+    align-items: center !important;
+    padding: 0 !important;
+}
+
+#header .header-socials a {
+    color: #ffffff !important;
+    font-size: 1.2rem !important;
+    text-decoration: none !important;
+    border: none !important;
+    transition: opacity 0.2s ease !important;
+}
+
+#header .header-socials a:hover {
+    opacity: 0.7 !important;
+}
+
+/* Ссылка Home справа */
+#header a.view-all-link {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    font-size: 0.95rem !important;
+    text-decoration: none !important;
+    border: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    transition: opacity 0.2s ease !important;
+}
+
+#header a.view-all-link:hover {
+    opacity: 0.7 !important;
+}
+
+/* Отступы секции галереи */
+#three.wrapper {
+    padding-top: 3rem !important;
+    background-color: #f3f3f5 !important;
+}
+
+/* Заголовок страницы */
+#three header.align-center {
+    margin-bottom: 2.5rem !important;
+}
+
+#three header p.special {
+    font-size: 0.85rem !important;
+    letter-spacing: 2px !important;
+    text-transform: uppercase !important;
+    color: #888888 !important;
+    margin-bottom: 0.5rem !important;
+}
+
+#three header h2 {
+    font-size: 1.1rem !important;
+    font-weight: 400 !important;
+    color: #999999 !important;
+    margin: 0 !important;
+}
+
+/* Двухколоночная сетка галереи */
+#three .gallery {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    margin: -1rem !important;
+}
+
+#three .gallery > div {
+    width: 50% !important;
+    padding: 1rem !important;
+    box-sizing: border-box !important;
+}
+
+@media screen and (max-width: 736px) {
+    #three .gallery > div {
+        width: 100% !important;
+    }
+}
+
+/* Карточки с белой рамкой и фиксированной высотой */
+#three .gallery .image.fit {
+    background: #ffffff !important;
+    padding: 10px !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06) !important;
+    border-radius: 2px !important;
+    margin: 0 !important;
+    display: block !important;
+}
+
+#three .gallery .image.fit a {
+    display: block !important;
+    width: 100% !important;
+    height: 320px !important; /* Фиксированная одинаковая высота карточек */
+    overflow: hidden !important;
+}
+
+#three .gallery .image.fit img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important; /* Автоматическая подгонка картинки без искажения пропорций */
+    object-position: center !important;
+    display: block !important;
+    transition: transform 0.3s ease !important;
+}
+
+#three .gallery .image.fit a:hover img {
+    transform: scale(1.02) !important;
+}
