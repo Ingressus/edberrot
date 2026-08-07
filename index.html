@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <!-- Фавикон -->
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/x-icon" href="favicon(2).ico">
     
     <!-- Подключение CSS файлов -->
     <link rel="stylesheet" href="assets/css/main.css">
@@ -112,28 +112,28 @@
                     <div>
                         <div class="image fit">
                             <a href="images/1001.png" data-fancybox="gallery">
-                                <img src="images/1001.png" alt="Work 1001">
+                                <img src="images/1001.png" alt="Work 1001" loading="lazy">
                             </a>
                         </div>
                     </div>
                     <div>
                         <div class="image fit">
                             <a href="images/1002.png" data-fancybox="gallery">
-                                <img src="images/1002.png" alt="Work 1002">
+                                <img src="images/1002.png" alt="Work 1002" loading="lazy">
                             </a>
                         </div>
                     </div>
                     <div>
                         <div class="image fit">
                             <a href="images/1003.png" data-fancybox="gallery">
-                                <img src="images/1003.png" alt="Work 1003">
+                                <img src="images/1003.png" alt="Work 1003" loading="lazy">
                             </a>
                         </div>
                     </div>
                     <div>
                         <div class="image fit">
                             <a href="images/1004.png" data-fancybox="gallery">
-                                <img src="images/1004.png" alt="Work 1004">
+                                <img src="images/1004.png" alt="Work 1004" loading="lazy">
                             </a>
                         </div>
                     </div>
@@ -158,6 +158,13 @@
                     <!-- Email -->
                     <li><a href="mailto:eedberrot@gmail.com" target="_blank" rel="noopener noreferrer" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
                 </ul>
+
+                <!-- МИНИМАЛИСТИЧНЫЙ БЛОК СЧЕТЧИКОВ -->
+                <div class="site-stats">
+                    <span class="stat-item">Views: <strong id="total-views">...</strong></span>
+                    <span class="stat-divider">•</span>
+                    <span class="stat-item">Unique: <strong id="unique-views">...</strong></span>
+                </div>
             </div>
         </footer>
         <div class="copyright">
@@ -179,6 +186,39 @@
     <script>
         Fancybox.bind('[data-fancybox="gallery"]', {
             wheel: "slide",
+        });
+    </script>
+
+    <!-- Скрипт подсчета просмотров -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const domain = window.location.hostname || "valeria-art-portfolio";
+            
+            // 1. Общие просмотры
+            fetch(`https://api.countapi.xyz/hit/${domain}/all_views`)
+                .then(res => res.json())
+                .then(data => {
+                    document.getElementById("total-views").innerText = data.value;
+                })
+                .catch(() => { document.getElementById("total-views").innerText = "1"; });
+
+            // 2. Уникальные посетители
+            if (!localStorage.getItem("visited_unique")) {
+                fetch(`https://api.countapi.xyz/hit/${domain}/unique_views`)
+                    .then(res => res.json())
+                    .then(data => {
+                        document.getElementById("unique-views").innerText = data.value;
+                        localStorage.setItem("visited_unique", "true");
+                    })
+                    .catch(() => { document.getElementById("unique-views").innerText = "1"; });
+            } else {
+                fetch(`https://api.countapi.xyz/get/${domain}/unique_views`)
+                    .then(res => res.json())
+                    .then(data => {
+                        document.getElementById("unique-views").innerText = data.value;
+                    })
+                    .catch(() => { document.getElementById("unique-views").innerText = "1"; });
+            }
         });
     </script>
 </body>
