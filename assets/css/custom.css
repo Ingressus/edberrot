@@ -1,27 +1,8 @@
 /* ==========================================================================
-   СТИЛИ ДЛЯ INDEX.HTML
+   СТИЛИ ИСКЛЮЧИТЕЛЬНО ДЛЯ СТРАНИЦЫ INDEX.HTML
    ========================================================================== */
 
-/* Фикс высоты первого блока (banner / header), чтобы аватар и портрет влезали */
-#banner, .banner, #header-wrapper {
-    max-height: 75vh !important; /* Не даем баннеру занимать весь экран */
-}
-
-/* Стили для аватара/портрета (если он находится внутри баннера) */
-.avatar, .portrait, #banner .image.avatar, .profile-img {
-    display: block !important;
-    margin: 0 auto 1.5rem auto !important;
-    width: 120px !important;
-    height: 120px !important;
-    border-radius: 50% !important;
-    object-fit: cover !important;
-    border: 3px solid rgba(255, 255, 255, 0.8) !important;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
-    position: relative !important;
-    z-index: 10 !important;
-}
-
-/* Шапка сайта */
+/* 1. Выравнивание шапки */
 #header {
     display: flex !important;
     justify-content: space-between !important;
@@ -40,7 +21,6 @@
     z-index: 1000 !important;
 }
 
-/* Соцсети в шапке */
 #header .header-socials {
     display: flex !important;
     align-items: center !important;
@@ -68,7 +48,6 @@
     opacity: 0.7 !important;
 }
 
-/* Ссылка View All */
 #header a.view-all-link {
     color: #ffffff !important;
     font-weight: 600 !important;
@@ -80,33 +59,107 @@
     transition: opacity 0.2s ease !important;
 }
 
-#header a.view-all-link:hover {
-    opacity: 0.7 !important;
+/* 2. Центрирование центрального блока текста и портрета на слайде */
+.banner article .inner {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    bottom: auto !important;
+    right: auto !important;
+    transform: translate(-50%, -50%) !important;
+    -webkit-transform: translate(-50%, -50%) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 90% !important;
+    max-width: 800px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    z-index: 2 !important;
 }
 
-/* Красивая кнопка внизу главной страницы */
-.view-more-container {
-    text-align: center !important;
-    margin: 3rem 0 1rem 0 !important;
+.banner article .inner header {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
-.button.special-view-all {
-    background-color: #ffffff !important;
+/* Главный заголовок */
+.banner article .inner header h1.main-title {
+    font-size: 2.8rem !important;
+    font-weight: 700 !important;
+    color: #ffffff !important;
+    margin: 0 0 0.5rem 0 !important;
+    padding: 0 !important;
+    line-height: 1.1 !important;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7) !important;
+    text-transform: none !important;
+}
+
+/* Подзаголовок */
+.banner article .inner header p.main-subtitle {
+    font-weight: 600 !important;
+    font-size: 1.05rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    margin: 0 0 1.2rem 0 !important;
+    padding: 0 !important;
+    line-height: 1.3 !important;
+    color: rgba(255, 255, 255, 0.95) !important;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8) !important;
+}
+
+/* Отключение дефолтных подчеркиваний темы Hielo */
+.banner article .inner header p::after,
+.banner article .inner header p::before,
+.banner article .inner header::after,
+.banner article .inner header::before {
+    display: none !important;
+    content: none !important;
+}
+
+/* 3. СТИЛИ ДЛЯ ПОРТРЕТА / АВАТАРКИ */
+.carousel-profile-img {
+    display: block !important;
+    width: 95px !important;
+    height: 95px !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
+    border: 3px solid rgba(255, 255, 255, 0.85) !important;
+    margin: 0 auto !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6) !important;
+}
+
+/* 4. КНОПКА VIEW MORE ВНИЗУ СТРАНИЦЫ */
+#three.wrapper a.view-all-link.bottom {
+    display: inline-block !important;
+    margin: 2.5rem auto 1rem auto !important;
     color: #555555 !important;
-    border: 1px solid #e0e0e0 !important;
+    background-color: transparent !important;
+    border: 2px solid #555555 !important;
     border-radius: 4px !important;
     font-weight: 600 !important;
-    padding: 0.8rem 2.5rem !important;
+    font-size: 0.85rem !important;
     text-decoration: none !important;
-    display: inline-block !important;
-    transition: all 0.3s ease !important;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 2px !important;
+    padding: 0.6rem 2rem !important;
+    line-height: normal !important;
+    transition: all 0.2s ease !important;
 }
 
-.button.special-view-all:hover {
-    background-color: #f8f8f8 !important;
-    color: #111111 !important;
-    border-color: #ccc !important;
-    transform: translateY(-2px) !important;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1) !important;
+#three.wrapper a.view-all-link.bottom:hover {
+    color: #ffffff !important;
+    background-color: #555555 !important;
+    border-color: #555555 !important;
+    opacity: 1 !important;
+}
+
+#three.wrapper .inner {
+    text-align: center !important;
 }
